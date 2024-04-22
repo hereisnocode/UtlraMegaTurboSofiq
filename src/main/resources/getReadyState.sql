@@ -1,0 +1,1 @@
+select readystate from "SofikBD".players where id=%s

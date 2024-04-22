@@ -1,0 +1,1 @@
+select score from "SofikBD".players where id=%s
