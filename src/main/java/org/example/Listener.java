@@ -15,6 +15,7 @@ public class Listener {
         server.createContext("/api/user/visit_bar", new User_VisitBar_Handler());
         server.createContext("/api/user/get_available_tasks", new User_GetAvailiableTasks_Handler());
         server.createContext("/api/user/get_available_bars", new User_GetAvailable_Bars_Handler());
+        server.createContext("/api/get_users", new GetUsers_Handler());
         server.setExecutor(null); // creates a default executor
         server.start();
     }
