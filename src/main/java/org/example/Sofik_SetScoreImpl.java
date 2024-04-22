@@ -9,7 +9,7 @@ public class Sofik_SetScoreImpl {
         try {
             var playerScore = postgres.ExecuteSelectSingleResult("GetScore.sql", String.valueOf(sReq.userId));
             int newScore = Integer.parseInt(playerScore) + Integer.parseInt(sReq.count);
-            String res = postgres.ExecuteFunction("set_score",sReq.userId, newScore);
+            String res = postgres.ExecuteFunction("set_score",sReq.userId, String.valueOf(newScore));
             if (res.equals("-1488")) return Essentials.BusinessLoginExceptions(-1488).formatted("\"count\":null");
             else return "{\"code\":0,\"result\":\"OK\",\"id\":"+sReq.userId+",\"count\":"+res+"}";
         }
