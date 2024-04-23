@@ -7,7 +7,8 @@ public class GetUsersImpl {
 
   public static String GetUsers() throws SQLException {
     try {
-      String res="{\"users\":[";
+      String res="{";
+      res+="\"users\":[";
       Postgres postgres = new Postgres();
       res+=postgres.ExecuteSelectMultipleResults("GetUsers.sql")+"]";
       res+="}";

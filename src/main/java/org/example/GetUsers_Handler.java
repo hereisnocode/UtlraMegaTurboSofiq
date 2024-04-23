@@ -15,6 +15,7 @@ public class GetUsers_Handler implements HttpHandler {
   public void handle(HttpExchange t) throws IOException {
       System.out.println("got get-users request");
       t.getResponseHeaders().add("Content-Type", "application/json");
+      t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
 
       if ("GET".equals(t.getRequestMethod())) {
           System.out.println("GET correct "+t.getRequestURI().getRawQuery());
